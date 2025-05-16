@@ -159,6 +159,10 @@ a{
     display: none;
 }
 
+.header .inner-menu .inner-overlay {
+    display: none;
+}
+
 @media (max-width: 1199.98px) {
     .header .button {
         display: none;
@@ -178,6 +182,8 @@ a{
     .header .inner-form {
         display: none;
     }
+
+    
 }
 
 @media (max-width: 767.98px) {
@@ -198,11 +204,53 @@ a{
     .header .inner-menu {
         display: none;
     }
+    
+    .header .inner-menu[show="yes"] {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        text-align: left;
+    }
+
+    .header .inner-menu[show="yes"] ul{
+        flex-direction: column;
+        gap: 15px;
+        height: 100%;
+        background-color: #fff;
+        padding: 20px;
+        width: 250px;
+        z-index: 1;
+        position: relative;
+    }
+
+    .header .inner-menu[show="yes"] .inner-overlay {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #00000011;
+        cursor: pointer;
+    }
+
+    .header .inner-menu[show="yes"] .inner-overlay i {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+        color: rgb(253, 253, 253);
+    }
 
     .header .inner-logo img {
         height: 32px;
         
     }
+
+    
 }
 /* end-header */
 /* section-1 */
@@ -679,8 +727,25 @@ a{
 .section-4 .inner-wrap .blog-item {
     width: calc((100% - 40px) / 3);
 }
+
+.section-4 .swiper-blog .swiper-wrapper {
+    margin-bottom: 15px;
+}
+
+.section-4 .swiper-blog .swiper-slide {
+    height: auto;
+}
+
+.section-4 .swiper-blog .swiper-slide .blog-item{
+    height: 100%;
+}
+
 .section-4 .inner-button-bottom .button-outline {
     display: none;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 32px;
 }
 
 @media (max-width: 991.98px) {
@@ -703,6 +768,10 @@ a{
         display: flex;
         justify-content: center;
     }
+
+    .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 24px;
+}
 }
 
 @media (max-width: 575.98px) {
@@ -1009,3 +1078,13 @@ a{
 }
 
 /* end-flooter */
+
+/* ViewerJS */
+.viewer-toolbar>ul>li {
+    background-color: rgb(185, 49, 49);
+}
+
+.viewer-button {
+    background-color: rgb(185, 49, 49);
+}
+/* End ViewerJS */
